@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publikation – Institut für Medienpädagogik Schweiz</title>
+    <style>
+      :root {
+        --navy: #0f2b4d;
+        --navy-dark: #09203a;
+        --blue: #1f4f7a;
+        --text: #1f2933;
+        --muted: #5f6b7a;
+        --line: #dce3eb;
+        --bg: #f7f9fc;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background: var(--navy);
+        color: var(--white);
+        padding: 1rem 1.2rem;
+      }
+
+      .brand-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .brand {
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        font-size: 0.95rem;
+        color: #dfe8f2;
+      }
+
+      nav a {
+        padding-bottom: 0.15rem;
+        border-bottom: 1px solid transparent;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        border-color: currentColor;
+      }
+
+      main {
+        flex: 1;
+        padding: 1.2rem;
+      }
+
+      .about-section {
+        max-width: 760px;
+        margin: 1rem auto 0 auto;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.1rem 1.2rem;
+        box-shadow: 0 4px 12px rgba(15, 43, 77, 0.05);
+      }
+
+      .about-section h2 {
+        margin: 0 0 0.45rem 0;
+        font-size: 1.05rem;
+        color: var(--navy-dark);
+      }
+
+      .about-section p {
+        margin: 0;
+        font-size: 0.96rem;
+        color: var(--text);
+      }
+
+      .article-card {
+        max-width: 760px;
+        margin: 0 auto;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(15, 43, 77, 0.06);
+        overflow: hidden;
+      }
+
+      .article-body {
+        padding: 1.2rem;
+      }
+
+      .category {
+        display: inline-block;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: #eef4fa;
+        color: var(--blue);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+      }
+
+      h1 {
+        margin: 0 0 0.75rem 0;
+        font-size: clamp(1.35rem, 3vw, 1.9rem);
+        line-height: 1.25;
+        color: var(--navy-dark);
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem 0.8rem;
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin-bottom: 1.1rem;
+        padding-bottom: 0.9rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .meta span {
+        display: inline-block;
+      }
+
+      .lead {
+        font-size: 1rem;
+        color: var(--text);
+        margin: 0 0 0.9rem 0;
+      }
+
+      .result-box {
+        background: #f4f7fb;
+        border-left: 4px solid var(--blue);
+        padding: 0.95rem 1rem;
+        margin: 1.1rem 0 1.2rem 0;
+      }
+
+      .result-box strong {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--navy-dark);
+        margin-bottom: 0.25rem;
+      }
+
+      .citation {
+        margin-top: 1.2rem;
+        padding-top: 0.95rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .citation h2 {
+        font-size: 1rem;
+        margin: 0 0 0.45rem 0;
+        color: var(--navy-dark);
+      }
+
+      .citation p {
+        margin: 0;
+        font-size: 0.96rem;
+        color: var(--text);
+      }
+
+      footer {
+        background: #eff3f7;
+        color: var(--muted);
+        padding: 1rem 1.2rem 1.35rem 1.2rem;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem 1rem;
+        margin-bottom: 0.45rem;
+      }
+
+      .note {
+        font-size: 0.78rem;
+        color: #6f7b88;
+        margin-top: 0.75rem;
+      }
+
+      @media (min-width: 700px) {
+        header {
+          padding: 1.2rem 2rem;
+        }
+
+        .brand-row {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        main {
+          padding: 2rem;
+        }
+
+        .article-body {
+          padding: 1.6rem 2rem 2rem 2rem;
+        }
+
+        footer {
+          padding: 1.1rem 2rem 1.4rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="brand-row">
+          <div class="brand">Institut für Medienpädagogik Schweiz</div>
+          <nav aria-label="Sekundäre Navigation">
+            <a href="#">Forschung</a>
+            <a href="#">Publikationen</a>
+            <a href="#about">Über uns</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <article class="article-card" aria-labelledby="paper-title">
+          <div class="article-body">
+            <div class="category">Publikation – Kurzbericht</div>
+            <h1 id="paper-title">Jugendliche und Werbung in sozialen Medien</h1>
+
+            <div class="meta" aria-label="Metadaten">
+              <span><strong>Herausgeber:</strong> Institut für Medienpädagogik Schweiz</span>
+              <span><strong>Erscheinungsdatum:</strong> März 2026</span>
+              <span><strong>Autorenschaft:</strong> Forschungsteam Medienkompetenz</span>
+            </div>
+
+            <p class="lead">
+              Viele Jugendliche erkennen Werbung, gesponserte Beiträge und Influencer-Marketing nicht immer auf den ersten Blick. Die Studie befragte 1'200 Jugendliche zwischen 12 und 16 Jahren in der Deutschschweiz.
+            </p>
+            <p class="lead">
+              Die Ergebnisse zeigen, dass die Bewertung von Werbehinweisen bei Jugendlichen stark von der Darstellung und dem Kontext abhängt. Besonders bei kurzen Videos und persönlichen Accounts wird die Unterscheidung zwischen Information und Sponsoring schwieriger.
+            </p>
+
+            <div class="result-box" aria-label="Wichtiger Befund">
+              <strong>62 % erkennen gesponserte Beiträge nicht sofort.</strong>
+              Die Befragten nannten vor allem die fehlende Kennzeichnung und die Nähe zur Alltagssprache als Gründe für die Verwechslungsgefahr.
+            </div>
+
+            <div class="citation">
+              <h2>Zitiervorschlag</h2>
+              <p>
+                Institut für Medienpädagogik Schweiz (2026). <em>Jugendliche und Werbung in sozialen Medien</em>. Kurzbericht, März 2026.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <section id="about" class="about-section" aria-labelledby="about-title">
+          <h2 id="about-title">Über uns</h2>
+          <p>
+            Hinter dieser Website steht das fiktive Institut für Medienpädagogik Schweiz. Es präsentiert sich als unabhängige Forschungseinrichtung für Medienbildung und digitale Kompetenz und arbeitet mit einer sachlich-analytischen Sprache an öffentlichen Themen wie Werbung, Informationskompetenz und digitale Mediennutzung.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-links">
+          <span>Impressum</span>
+          <span>Kontakt</span>
+          <span>Datenschutz</span>
+        </div>
+        <div>© 2026 Institut für Medienpädagogik Schweiz</div>
+        <div class="note">Hinweis: Diese Seite ist Teil eines Lernspiels. Das Institut und die Studie sind fiktiv.</div>
+      </footer>
+    </div>
+  </body>
+</html>
